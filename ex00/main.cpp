@@ -13,6 +13,18 @@ int main()
   v.push_back(8);
   v.push_back(10);
 
-  std::cout << *easyfind(v, 6);
+  try
+  {
+    std::cout << *easyfind(v, 6) << "\n";
+  } catch (std::exception& e) {
+    std::cout << e.what() << "\n";
+  }
+  
+  try
+  {
+    std::cout << *easyfind(v, 1) << "\n";
+  } catch (std::exception& e) {
+    std::cout << e.what() << "\n";
+  }
   return 0;
 }
