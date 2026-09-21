@@ -33,7 +33,7 @@ unsigned int Span::shortestSpan() const
   std::vector<int> tmp = numbers;
   std::sort(tmp.begin(), tmp.end());
 
-  unsigned int shortest = tmp[1] - tmp[0];
+  unsigned int shortest = static_cast<unsigned int>(tmp[1]) - static_cast<unsigned int>(tmp[0]);
 
   for (std::vector<int>::iterator it = tmp.begin(); it + 1 != tmp.end(); ++it)
   {
