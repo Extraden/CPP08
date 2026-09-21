@@ -4,12 +4,15 @@
 
 Span::Span(unsigned int size) : maxSize(size) {}
 
-Span::Span(const Span& other) : maxSize(other.maxSize) {}
+Span::Span(const Span& other) : maxSize(other.maxSize), numbers(other.numbers) {}
 
 Span&	Span::operator=(const Span& other)
 {
   if (this != &other)
+  {
     maxSize = other.maxSize;
+    numbers = other.numbers;
+  }
   return *this;
 }
 
