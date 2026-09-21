@@ -20,7 +20,7 @@ Span::~Span() {}
 
 void Span::addNumber(int n)
 {
-  if (numbers.size() == maxSize)
+  if (numbers.size() >= maxSize)
     throw std::runtime_error("Vector is full!\n");
   numbers.push_back(n);
 }
