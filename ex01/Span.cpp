@@ -37,7 +37,7 @@ unsigned int Span::shortestSpan() const
 
   for (std::vector<int>::iterator it = tmp.begin(); it + 1 != tmp.end(); ++it)
   {
-    unsigned int currentSpan = *(it + 1) - *it;
+    unsigned int currentSpan = static_cast<unsigned int>(*(it + 1)) - static_cast<unsigned int>(*it);
     if (currentSpan < shortest)
       shortest = currentSpan;
   }
@@ -51,5 +51,5 @@ unsigned int Span::longestSpan() const
   std::vector<int> tmp(numbers);
 
   std::sort(tmp.begin(), tmp.end());
-  return tmp.back() - tmp.front();
+  return static_cast<unsigned int>(tmp.back()) - static_cast<unsigned int>(tmp.front());
 }
