@@ -13,6 +13,7 @@ class Span
 
     void addNumber(int n);
     unsigned int shortestSpan() const;
+    unsigned int longestSpan() const;
 
   private:
     unsigned int maxSize;

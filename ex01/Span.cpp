@@ -40,3 +40,13 @@ unsigned int Span::shortestSpan() const
   }
   return shortest;
 }
+
+unsigned int Span::longestSpan() const
+{
+  if (numbers.size() < 2)
+    throw std::runtime_error("Not enough numbers in vector\n");
+  std::vector<int> tmp(numbers);
+
+  std::sort(tmp.begin(), tmp.end());
+  return tmp.back() - tmp.front();
+}
