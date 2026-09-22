@@ -19,7 +19,7 @@ class Span
     void addNumber(Iterator begin, Iterator end)
     {
       std::vector<int>::size_type count = static_cast<std::vector<int>::size_type>(std::distance(begin, end));
-      std::vector<int>::size_type freeSpace = static_cast<std::vector<int>::size_type>(maxSize - numbers.size());
+      std::vector<int>::size_type freeSpace = maxSize - numbers.size();
       if (count > freeSpace)
         throw std::runtime_error("Not enough space in container\n");
 
