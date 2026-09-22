@@ -2,6 +2,8 @@
 # define SPAN_HPP
 
 #include <vector>
+#include <stdexcept>
+#include <iterator>
 
 class Span
 {
@@ -12,6 +14,17 @@ class Span
     ~Span();
 
     void addNumber(int n);
+
+    template <typename Iterator>
+    void addNumber(Iterator begin, Iterator end)
+    {
+      if (std::distance(begin, end) > (maxSize - numbers.size()))
+        throw std::runtime_error("Not enough space in container\n");
+
+      for (Iterator it = begin; it != end; ++it)
+        addNumber(*it);
+    }
+
     unsigned int shortestSpan() const;
     unsigned int longestSpan() const;
 
