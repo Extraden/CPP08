@@ -18,7 +18,9 @@ class Span
     template <typename Iterator>
     void addNumber(Iterator begin, Iterator end)
     {
-      if (std::distance(begin, end) > (maxSize - numbers.size()))
+      std::vector<int>::size_type count = std::distance(begin, end);
+      std::vector<int>::size_type freeSpace = maxSize - numbers.size();
+      if (count > freeSpace)
         throw std::runtime_error("Not enough space in container\n");
 
       for (Iterator it = begin; it != end; ++it)
