@@ -7,28 +7,30 @@ int	main()
 
   // Simple tests
   
-  Span sp(10000);
+  Span sp1(10000);
 
   try 
   {
     for (int i = 0; i < 10000; ++i)
-      sp.addNumber(i);
+      sp1.addNumber(i);
 
-    std::cout << sp.shortestSpan() << std::endl;
-    std::cout << sp.longestSpan() << std::endl;
+    std::cout << sp1.shortestSpan() << std::endl;
+    std::cout << sp1.longestSpan() << std::endl;
   }
   catch (const std::exception& e)
   {
     std::cout << e.what();
   }
 
+
+  Span sp2(10000);
   try 
   {
     for (int i = 0; i < 10001; ++i)
-      sp.addNumber(i);
+      sp2.addNumber(i);
 
-    std::cout << sp.shortestSpan() << std::endl;
-    std::cout << sp.longestSpan() << std::endl;
+    std::cout << sp2.shortestSpan() << std::endl;
+    std::cout << sp2.longestSpan() << std::endl;
   }
   catch (const std::exception& e)
   {
@@ -37,7 +39,7 @@ int	main()
 
   // Iterator tests
   
-  Span sp2(10000);
+  Span sp3(10000);
 
   std::list<int> lst;
 
@@ -46,15 +48,17 @@ int	main()
 
   try 
   {
-    sp2.addNumber(lst.begin(), lst.end());
+    sp3.addNumber(lst.begin(), lst.end());
 
-    std::cout << sp2.shortestSpan() << std::endl;
-    std::cout << sp2.longestSpan() << std::endl;
+    std::cout << sp3.shortestSpan() << std::endl;
+    std::cout << sp3.longestSpan() << std::endl;
   }
   catch (const std::exception& e)
   {
     std::cout << e.what();
   }
+
+  Span sp4(10000);
 
   lst.clear();
   for (int i = 0; i < 10001; ++i)
@@ -62,10 +66,10 @@ int	main()
 
   try 
   {
-    sp2.addNumber(lst.begin(), lst.end());
+    sp4.addNumber(lst.begin(), lst.end());
 
-    std::cout << sp2.shortestSpan() << std::endl;
-    std::cout << sp2.longestSpan() << std::endl;
+    std::cout << sp4.shortestSpan() << std::endl;
+    std::cout << sp4.longestSpan() << std::endl;
   }
   catch (const std::exception& e)
   {
