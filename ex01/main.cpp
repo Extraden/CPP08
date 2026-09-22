@@ -17,7 +17,7 @@ int	main()
     std::cout << sp.shortestSpan() << std::endl;
     std::cout << sp.longestSpan() << std::endl;
   }
-  catch (std::exception& e)
+  catch (const std::exception& e)
   {
     std::cout << e.what();
   }
@@ -30,7 +30,7 @@ int	main()
     std::cout << sp.shortestSpan() << std::endl;
     std::cout << sp.longestSpan() << std::endl;
   }
-  catch (std::exception& e)
+  catch (const std::exception& e)
   {
     std::cout << e.what();
   }
@@ -51,7 +51,7 @@ int	main()
     std::cout << sp2.shortestSpan() << std::endl;
     std::cout << sp2.longestSpan() << std::endl;
   }
-  catch (std::exception& e)
+  catch (const std::exception& e)
   {
     std::cout << e.what();
   }
@@ -67,7 +67,7 @@ int	main()
     std::cout << sp2.shortestSpan() << std::endl;
     std::cout << sp2.longestSpan() << std::endl;
   }
-  catch (std::exception& e)
+  catch (const std::exception& e)
   {
     std::cout << e.what();
   }
