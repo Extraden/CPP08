@@ -5,7 +5,7 @@ NAME = easyfind
 
 all: $(NAME)
 
-$(NAME): main.cpp easyfind.hpp
+$(NAME): main.cpp easyfind.hpp easyfind.tpp
 	$(CXX) $(CXXFLAGS) main.cpp -o $(NAME)
 
 clean:
