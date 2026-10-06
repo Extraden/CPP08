@@ -2,6 +2,8 @@
 #include <stdexcept>
 #include <algorithm>
 
+Span::Span() : maxSize(0) {}
+
 Span::Span(unsigned int size) : maxSize(size) {}
 
 Span::Span(const Span& other) : maxSize(other.maxSize), numbers(other.numbers) {}
